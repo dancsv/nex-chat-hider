@@ -1,12 +1,12 @@
-package com.nexshutup;
+package com.nexchathider;
 
 import lombok.RequiredArgsConstructor;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("nexshutup")
-public interface NexShutUpConfig extends Config
+@ConfigGroup("nexchathider")
+public interface NexChatHiderConfig extends Config
 {
 	@RequiredArgsConstructor
 	enum Mode

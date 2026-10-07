@@ -1,4 +1,4 @@
-package com.nexshutup;
+package com.nexchathider;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -20,7 +20,7 @@ import net.runelite.client.util.Text;
 	description = "Hides Nex's chatbox shouts during the fight, keeping only her latest line or hiding them all",
 	tags = {"nex", "chat", "spam", "gwd", "zaros", "mute", "ignore", "filter", "hide", "silence", "quiet", "block", "messages", "declutter"}
 )
-public class NexShutUpPlugin extends Plugin
+public class NexChatHiderPlugin extends Plugin
 {
 	@Inject
 	private Client client;
@@ -29,7 +29,7 @@ public class NexShutUpPlugin extends Plugin
 	private ClientThread clientThread;
 
 	@Inject
-	private NexShutUpConfig config;
+	private NexChatHiderConfig config;
 
 	private int latestNexMessageId = -1;
 
@@ -59,7 +59,7 @@ public class NexShutUpPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
-		if (event.getGroup().equals("nexshutup"))
+		if (event.getGroup().equals("nexchathider"))
 		{
 			clientThread.invoke(client::refreshChat);
 		}
@@ -89,7 +89,7 @@ public class NexShutUpPlugin extends Plugin
 		MessageNode node = client.getMessages().get(messageId);
 
 		if (node != null && isNex(node)
-			&& (config.mode() == NexShutUpConfig.Mode.HIDE_ALL || messageId != latestNexMessageId))
+			&& (config.mode() == NexChatHiderConfig.Mode.HIDE_ALL || messageId != latestNexMessageId))
 		{
 			intStack[intStackSize - 3] = 0;
 		}
@@ -103,8 +103,8 @@ public class NexShutUpPlugin extends Plugin
 	}
 
 	@Provides
-	NexShutUpConfig provideConfig(ConfigManager configManager)
+	NexChatHiderConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(NexShutUpConfig.class);
+		return configManager.getConfig(NexChatHiderConfig.class);
 	}
 }
