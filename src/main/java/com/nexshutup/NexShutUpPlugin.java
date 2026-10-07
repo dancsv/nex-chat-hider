@@ -16,9 +16,9 @@ import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.util.Text;
 
 @PluginDescriptor(
-	name = "Nex Shut Up",
+	name = "Nex Chat Hider",
 	description = "Hides Nex's chatbox shouts during the fight, keeping only her latest line or hiding them all",
-	tags = {"nex", "chat", "spam", "gwd", "zaros"}
+	tags = {"nex", "chat", "spam", "gwd", "zaros", "mute", "ignore", "filter", "hide", "silence", "quiet", "block", "messages", "declutter"}
 )
 public class NexShutUpPlugin extends Plugin
 {

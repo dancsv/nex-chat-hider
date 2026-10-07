@@ -1,4 +1,4 @@
-# Nex Shut Up
+# Nex Chat Hider
 
 Nex announces every special attack in the chatbox, burying everything else during the fight. This plugin tidies that up.
 
